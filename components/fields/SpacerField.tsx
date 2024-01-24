@@ -111,7 +111,7 @@ function PropertiesComponent({ elementInstance }: { elementInstance: FormElement
                 className="range"
                 min={5} 
                 max="200"
-                onChange={(e) => { setHeight(e.target.value); console.log(height); }}
+                onChange={(e) => { setHeight(e.target.value); }}
             />
         </label>
     </form>

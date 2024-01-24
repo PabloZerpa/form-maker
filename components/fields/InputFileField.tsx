@@ -224,7 +224,6 @@ function PropertiesComponent({ elementInstance }: { elementInstance: FormElement
 
             <select className="select select-bordered w-full max-w-xs"
                 onChange={(e) => {
-                  console.log(e.target.value)
                   setFields({
                     ...fields,
                     "size": e.target.value,

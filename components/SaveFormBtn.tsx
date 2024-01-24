@@ -18,7 +18,6 @@ const SaveFormBtn = ({ id }: { id: number | null }) => {
         try {
             const jsonElements = JSON.stringify(elements);
             const data = { id, elements, jsonElements }
-            console.log(elements);
 
             await fetch('/api/forms', {
                 method: 'PUT',

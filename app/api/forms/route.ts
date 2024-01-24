@@ -8,7 +8,6 @@ class UserNotFoundErr extends Error {};
 
 export async function GET() {
     try {
-        console.log('QUE PASO!');
         
         const user = await currentUser();
         if (!user) {
@@ -24,8 +23,6 @@ export async function GET() {
             },
         });
 
-        console.log(forms);
-
         return NextResponse.json(forms);
 
     } catch (error) {
@@ -40,7 +37,6 @@ export async function GET() {
 
 export async function POST(req: Request) {
     try {
-        console.log('QUE PASO!');
         const data = await req.json();
 
         const validation = formSchema.safeParse(data);
@@ -54,7 +50,6 @@ export async function POST(req: Request) {
         }
 
         const { name, description } = data;
-        console.log(name, description);
 
         const form = await prisma.form.create({
             data: {
@@ -63,8 +58,6 @@ export async function POST(req: Request) {
                 description,
             },
         });
-
-        console.log(form);
         
         if (!form) {
             throw new Error("something went wrong");
@@ -91,9 +84,6 @@ export async function PUT(request: Request) {
         if (!user) {
             throw new UserNotFoundErr();
         }
-        
-        console.log(id);
-        console.log(elements);
 
         await prisma.form.update({
             where: {
@@ -105,7 +95,6 @@ export async function PUT(request: Request) {
             },
         });
 
-        console.log('form');
         return NextResponse.json(id);
         
     } catch (error) {

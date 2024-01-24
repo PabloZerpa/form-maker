@@ -89,7 +89,3 @@ export const FormElements: FormElementsType = {
     RangeField: RangeFieldFormElement,
     RatingField: RatingFieldFormElement,
 };
-
-export const Code = {
-    
-}

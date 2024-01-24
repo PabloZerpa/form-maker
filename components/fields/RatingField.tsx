@@ -103,8 +103,8 @@ function FormComponent({elementInstance,submitValue,isInvalid,defaultValue,}: {
   const element = elementInstance as CustomInstance;
   const { label, required, helperText, amount } = element.extraAttributes;
   const [error, setError] = useState(false);
-  const [rating, setRating] = useState<number | null>(null);
-  const [hover, setHover] = useState<number | null>(null);
+  const [rating, setRating] = useState<number | null>(0);
+  const [hover, setHover] = useState<number | null>(0);
 
   useEffect(() => {
     setError(isInvalid === true);
@@ -120,6 +120,29 @@ function FormComponent({elementInstance,submitValue,isInvalid,defaultValue,}: {
         <div className="App">
           {[...Array(Number(amount))].map((star, index) => {
             const currentRating = index + 1;
+
+            if((!hover || !rating)){
+              return (
+                <label key={index}>
+                  <input
+                    key={star}
+                    type="radio"
+                    name="rating"
+                    className="hidden"
+                    value={currentRating}
+                    onChange={() => setRating(currentRating)}
+                  />
+                  <span
+                    className={`star mr-2 text-4xl cursor-pointer`}
+                    style={{ color: "#e4e5e9" }}
+                    onMouseEnter={() => setHover(currentRating)}
+                    onMouseLeave={() => setHover(null)}
+                  >
+                    ★
+                  </span>
+                </label>
+              );
+            }
 
             return (
               <label key={index}>

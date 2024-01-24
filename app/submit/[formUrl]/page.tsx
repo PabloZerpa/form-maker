@@ -20,7 +20,6 @@ function SubmitPage({ params }: { params: { formUrl: string }; }) {
       
       const data = await res.json();
       setForm(data);
-      console.log(data); 
     };
     
       useEffect(() => {

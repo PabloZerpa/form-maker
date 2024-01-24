@@ -184,7 +184,6 @@ function PropertiesComponent({ elementInstance }: { elementInstance: FormElement
 
   function applyChanges() {
     const { label, helperText, placeHolder, required, options } = fields;
-    console.log(options);
     updateElement(element.id, {
       ...element,
       extraAttributes: {
