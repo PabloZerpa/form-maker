@@ -162,16 +162,16 @@ function SubmissionsTable({ id }: { id: number }) {
       <div className="relative overflow-x-auto">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                {columns.map((column) => (
-                  <th scope="col" className="px-6 py-3">
+                {columns.map((column, index) => (
+                  <th key={index} scope="col" className="px-6 py-3">
                     {column.label}
                   </th>
                 ))}
               </thead>
               <tbody>
 
-                {columns.map((column) => (
-                  <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                {columns.map((column, index) => (
+                  <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     {/* <RowCell key={column.id} type={column.type} value={rows[column.id]} />
 
                     <td className="text-muted-foreground text-right">

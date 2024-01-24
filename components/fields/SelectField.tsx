@@ -274,8 +274,8 @@ function PropertiesComponent({ elementInstance }: { elementInstance: FormElement
                     <span className="label-text">Options</span>
                 </div>
 
-                {fields.options && fields.options.map((option) => (
-                  <div className="flex justify-center items-center gap-2 text-sm text-center bg-blue-600 text-[#E0E0E0] p-1 w-auto rounded-lg">
+                {fields.options && fields.options.map((option, index) => (
+                  <div key={index} className="flex justify-center items-center gap-2 text-sm text-center bg-blue-600 text-[#E0E0E0] p-1 w-auto rounded-lg">
                     {option}
                     <div
                       onClick={() => {
