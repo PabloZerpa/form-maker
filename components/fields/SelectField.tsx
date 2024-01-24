@@ -252,7 +252,8 @@ function PropertiesComponent({ elementInstance }: { elementInstance: FormElement
                 <div className="label">
                     <span className="label-text">Helper Text</span>
                 </div>
-                <input 
+                
+                <input  
                   type="name" 
                   name="helperText"
                   placeholder="Helper text" 
